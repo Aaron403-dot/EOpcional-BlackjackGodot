@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxnul72gwjysh"]
+
+[ext_resource type="Texture2D" uid="uid://c4puwppscvf4n" path="res://Icons/Fondo.jpg" id="1_ih8hj"]
+[ext_resource type="Script" path="res://universalrules.gd" id="1_mswcu"]
+[ext_resource type="PackedScene" uid="uid://bytmcy5pagknf" path="res://interfaz_juego.tscn" id="2_7ltpo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Reglas universales" type="Node" parent="."]
+script = ExtResource("1_mswcu")
+
+[node name="Camera2D" type="Camera2D" parent="Reglas universales"]
+
+[node name="TextureRect" type="TextureRect" parent="Reglas universales/Camera2D"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -580.0
+offset_top = -326.0
+offset_right = 578.0
+offset_bottom = 325.0
+grow_horizontal = 0
+texture = ExtResource("1_ih8hj")
+expand_mode = 1
+
+[node name="interfazJuego" parent="Reglas universales/Camera2D/TextureRect" instance=ExtResource("2_7ltpo")]
+layout_mode = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="button_down" from="Reglas universales/Camera2D/TextureRect/interfazJuego/Fondo/margenContenedor/HBoxContainer/VBoxContainer/Hit" to="Reglas universales" method="_on_hit_button_down"]
+[connection signal="button_down" from="Reglas universales/Camera2D/TextureRect/interfazJuego/Fondo/margenContenedor/HBoxContainer/VBoxContainer2/Fold" to="Reglas universales" method="_on_fold_button_down"]
+
+[editable path="Reglas universales/Camera2D/TextureRect/interfazJuego"]

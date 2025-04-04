@@ -1,0 +1,98 @@
+[gd_scene load_steps=2 format=3 uid="uid://bytmcy5pagknf"]
+
+[ext_resource type="Texture2D" uid="uid://c4puwppscvf4n" path="res://Icons/Fondo.jpg" id="1_0eol0"]
+
+[node name="interfazJuego" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0eol0")
+expand_mode = 1
+
+[node name="margenContenedor" type="MarginContainer" parent="Fondo"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Fondo/margenContenedor"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Fondo/margenContenedor/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="nCartas" type="Label" parent="Fondo/margenContenedor/HBoxContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "52"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Hit" type="Button" parent="Fondo/margenContenedor/HBoxContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "HIT"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Fondo/margenContenedor/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="Fondo/margenContenedor/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.4
+alignment = 1
+
+[node name="BoxContainer2" type="BoxContainer" parent="Fondo/margenContenedor/HBoxContainer/VBoxContainer3"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Fondo/margenContenedor/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Fold" type="Button" parent="Fondo/margenContenedor/HBoxContainer/VBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+text = "FOLD
+"
+
+[connection signal="button_down" from="Fondo/margenContenedor/HBoxContainer/VBoxContainer/Hit" to="." method="_on_hit_button_down"]
+[connection signal="button_down" from="Fondo/margenContenedor/HBoxContainer/VBoxContainer2/Fold" to="." method="_on_fold_button_down"]
