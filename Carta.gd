@@ -25,7 +25,11 @@ func setValue()->void:
 			cartaBG.set_texture(load("res://Icons/Trebol.png"))
 		"Corazon":
 			cartaBG.set_texture(load("res://Icons/Corazon.png"))
-	valorEnCarta.set_text(value)
+			
+	if typeof(value) == TYPE_INT:
+		valorEnCarta.set_text( String.num_int64(value))
+	else:
+		valorEnCarta.set_text(value)
 		
 	pass
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxnul72gwjysh"]
 
 [ext_resource type="Texture2D" uid="uid://c4puwppscvf4n" path="res://Icons/Fondo.jpg" id="1_ih8hj"]
-[ext_resource type="Script" path="res://universalrules.gd" id="1_mswcu"]
+[ext_resource type="Script" uid="uid://bpykx1yci68y3" path="res://universalrules.gd" id="1_mswcu"]
 [ext_resource type="PackedScene" uid="uid://bytmcy5pagknf" path="res://interfaz_juego.tscn" id="2_7ltpo"]
 
 [node name="Node2D" type="Node2D"]

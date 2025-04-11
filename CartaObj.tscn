@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkvu1ww6o6ubo"]
 
-[ext_resource type="Script" path="res://Carta.gd" id="1_8bu8v"]
+[ext_resource type="Script" uid="uid://cyd8hxat4ma5n" path="res://Carta.gd" id="1_8bu8v"]
 [ext_resource type="Texture2D" uid="uid://mdmjpc7quku3" path="res://Icons/Diamante.png" id="2_up4ff"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d7p3"]

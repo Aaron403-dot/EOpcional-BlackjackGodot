@@ -20,10 +20,9 @@ func _ready() -> void:
 	EtiquetaCartas = $Camera2D/TextureRect/interfazJuego/Fondo/margenContenedor/HBoxContainer/VBoxContainer/nCartas
 	EtiquetaCartas.set_text(String.num_int64(numeroCartas))
 	Carta = load("res://CartaObj.tscn")
-	Instanciar = Carta.instantiate()
+	
 	LadoCrupier = $Camera2D/TextureRect/interfazJuego/Fondo/margenContenedor/HBoxContainer/VBoxContainer3/BoxContainer
 	LadoJugador = $Camera2D/TextureRect/interfazJuego/Fondo/margenContenedor/HBoxContainer/VBoxContainer3/BoxContainer2
-	#nodoHijo.connect("señal",self,"_on_hit_button_down")
 	pass
 
 func GenerarMazo():
@@ -49,23 +48,25 @@ func _process(delta: float) -> void:
 func generarCarta():
 	numeroCartas -=1
 	Instanciar = Carta.instantiate()
+	Instanciar.value = 5
+	Instanciar.TipoCarta = "Pica"
 	LadoCrupier.add_child(Instanciar)
-#	var pos = Vector2(X,Y)
-#	Instanciar.position = pos
-##	Instanciar.position = pos
-#
-#	X+=150
 	
 	pass
 
+func AleatoriaCarta():
+	
+	
+	pass
+
+
 func _on_hit_button_down() -> void:
-#	print("YAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 	generarCarta()
-#	Instanciar.position = pos
+
 	
 	pass # Replace with function body.
 
 
 func _on_fold_button_down() -> void:
-#	print("LO LOGRE")
+
 	pass # Replace with function body.
